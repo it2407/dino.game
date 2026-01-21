@@ -1,3 +1,4 @@
+// Hlavní inicializace hry
 let game;
 
 function setup() {
@@ -6,20 +7,14 @@ function setup() {
 }
 
 function preload() {
-  // load the provided cactus image from URL and remove its background
-  // threshold can be adjusted if parts are removed incorrectly
-  try {
-    Cactus.loadImage('https://play-lh.googleusercontent.com/xr2DAHCcVwj2ziSV3coC68E-1N0EpIG1wRjYDmaEwdHLMkPJBBqReYoKsB3hyqmqIWQj', 90);
-    Cactus.imgScale = 0.5;
-  } catch (e) {
-    // ignore if loadImage not available yet
-  }
+  // Vše je teď kresleno procedurálně
 }
 
 function draw() {
   game.run();
 }
 
+// Ovládání: W/Mezerník = skok, S = přikrčení, R = nový pokus
 function keyPressed() {
   if (key === 'W' || key === 'w' || keyCode === UP_ARROW || key === ' ') game.jump();
   if (key === 'S' || key === 's') game.dino.duck();
